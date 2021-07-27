@@ -14,13 +14,36 @@
       color: var(--purple-white);
       text-align: center;
       line-height: 33px;
-      width: 60%;
+      width: 70%;
       span {
         color: #50e3c2;
       }
     }
-    img{
-        width: 60%;
+    img {
+      width: 70%;
+    }
+    .input-container {
+      position: relative;
+    }
+    input {
+      outline: none;
+      width: 90%;
+      height: 50px;
+      background-color: var(--white-lightBlack);
+      border: 1px solid var(--purple-white);
+      border-radius: 27px;
+    }
+    input::placeholder {
+      padding-left: 2rem;
+    }
+    #icon-search {
+      position: absolute;
+      width: 20px;
+      top: 30%;
+      right: 10%;
+    }
+    #icon-search:hover{
+      cursor: pointer;
     }
   }
 }
