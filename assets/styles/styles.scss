@@ -23,6 +23,7 @@ $Roboto: "Roboto", "sans-serif";
 body {
   --purple-white: #572ee5;
   --purple-black: #572ee5dd;
+  --white-black: #fff;
   --white-lightBlack: #fff;
   --black-white: #000;
   --grey-black: #f3f5f8;
@@ -30,6 +31,7 @@ body {
 .dark-mode {
   --purple-white: #fff;
   --purple-black: #000000dd;
+  --white-black: #000;
   --white-lightBlack: #37383c;
   --black-white: #fff;
   --grey-black: #222326;
@@ -38,4 +40,8 @@ body {
 @media (max-width: 700px) {
   @import "./mobile/nav", "./mobile/section-search", "./mobile/section-trends",
     "./mobile/footer", "./mobile/favs&my-gifs";
+}
+@media (min-width: 701px) {
+  @import "./desktop/nav", "./desktop/section-search",
+    "./desktop/section-trends", "./desktop/footer";
 }

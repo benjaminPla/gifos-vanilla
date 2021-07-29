@@ -26,6 +26,9 @@ nav {
     line-height: 60px;
     text-align: center;
     transition: 0.2s;
+    #create-gif-btn{
+      display: none;
+    }
   }
   .hamb-display {
     height: 180px;

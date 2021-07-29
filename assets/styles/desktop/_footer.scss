@@ -1,0 +1,17 @@
+footer {
+  background-color: var(--white-lightBlack);
+  display: flex;
+  justify-content: space-between;
+  font-family: $Roboto;
+  font-size: 13px;
+  color: var(--black-white);
+  padding: 1rem 5rem;
+  position: relative;
+  .fab {
+    margin: 0 0.5rem;
+  }
+  .icons {
+    position: absolute;
+    left: 170px;
+  }
+}

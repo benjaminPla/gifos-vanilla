@@ -5,6 +5,7 @@ function setNav() {
   themeBtn();
   favsBtn();
   myGifsBtn();
+  window.addEventListener("scroll", navScroll);
 }
 
 function homeBtn() {
@@ -43,6 +44,13 @@ function myGifsBtn() {
 
 function closeHambMenu() {
   document.querySelector(".container-hamb").classList.remove("hamb-display");
+}
+
+function navScroll() {
+  const nav = document.querySelector("nav");
+  window.scrollY === 0
+    ? nav.classList.remove("navShadow")
+    : nav.classList.add("navShadow");
 }
 
 export { setNav };

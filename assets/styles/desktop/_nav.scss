@@ -1,0 +1,32 @@
+nav {
+  border-top: 5px solid var(--purple-white);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5rem;
+  background-color: var(--white-lightBlack);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  #icon-hamb {
+    display: none;
+  }
+  .container-hamb {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-family: $Montserrat;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--purple-white);
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    li {
+      display: inline-block;
+      margin: 0 2rem;
+    }
+  }
+}
+.navShadow {
+  box-shadow: 0 2px 4px 1px rgba(156, 175, 195, 0.55);
+}

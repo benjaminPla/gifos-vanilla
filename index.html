@@ -26,22 +26,34 @@
 
   <body>
     <nav>
-      <img id="home-btn" class="hover" src="./assets/imgs/logo.svg" alt="logo" />
+      <img
+        id="home-btn"
+        class="hover"
+        src="./assets/imgs/logo.svg"
+        alt="logo"
+      />
       <i id="icon-hamb" class="fas fa-bars hover"></i>
       <div class="container-hamb">
         <li id="theme-btn" class="hover">Modo Nocturno</li>
         <li id="favs-btn" class="hover">Favoritos</li>
         <li id="my-gifs-btn" class="hover">Mis GIFOS</li>
+        <li id="create-gif-btn" class="hover">
+          <img src="./assets/imgs/icon-create-gif.svg" alt="icon-create-gif" />
+        </li>
       </div>
     </nav>
     <section id="section-main"></section>
     <section id="section-trends">
       <h2>Trending GIFOS</h2>
       <p>Mira los últimos GIFOS de nuestra comunidad.</p>
-      <div class="trends-grid">
-        <div class="gif"></div>
-        <div class="gif"></div>
-        <div class="gif"></div>
+      <div class="trends-grid-container">
+        <button class="hover">&lt;</button>
+        <div class="trends-grid">
+          <div class="gif"></div>
+          <div class="gif"></div>
+          <div class="gif"></div>
+        </div>
+        <button class="hover">&gt;</button>
       </div>
     </section>
     <footer>

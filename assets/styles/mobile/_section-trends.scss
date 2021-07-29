@@ -15,19 +15,26 @@
     color: var(--black-white);
     line-height: 23px;
   }
-  .trends-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(243px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-    overflow: scroll;
-    .gif {
-      border: 1px solid black;
-      width: 100%;
-      height: 187px;
+  .trends-grid-container {
+    button {
+      display: none;
     }
-  }
-  .trends-grid::-webkit-scrollbar {
-    display: none;
+    .trends-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+      overflow: scroll;
+      .gif {
+        border: 1px solid black;
+        width: 100%;
+        height: 187px;
+        // height: auto;
+      }
+    }
+    .trends-grid::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
