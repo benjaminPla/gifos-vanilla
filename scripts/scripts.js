@@ -1,3 +1,9 @@
 import { setNav } from "./nav.js";
 import { sectionSearch } from "./dom.js";
-window.addEventListener("load", setNav(), sectionSearch());
+import { fetchTrends } from "./fetchs.js";
+import { createGif } from "./create-gif.js";
+window.addEventListener("load", setNav(), sectionSearch(), trends());
+
+function trends() {
+  createGif(fetchTrends(), "trends-grid");
+}
