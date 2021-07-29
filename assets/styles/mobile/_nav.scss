@@ -3,4 +3,31 @@ nav {
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 95px;
+  background-color: var(--white-lightBlack);
+  #icon-hamb {
+    color: var(--purple-white);
+  }
+  .container-hamb {
+    height: 0;
+    overflow: hidden;
+    color: #fff;
+    background-color: var(--purple-black);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 90px;
+    list-style: none;
+    font-family: $Montserrat;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 60px;
+    text-align: center;
+    transition: 0.2s;
+  }
+  .hamb-display {
+    height: 180px;
+  }
 }

@@ -5,16 +5,37 @@
 }
 
 $Montserrat: "Montserrat", "sans-serif";
+$Roboto: "Roboto", "sans-serif";
+
+.hover:hover {
+  cursor: pointer;
+  animation: hover 0.2s linear forwards;
+}
+@keyframes hover {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
 
 body {
   --purple-white: #572ee5;
+  --purple-black: #572ee5dd;
   --white-lightBlack: #fff;
+  --black-white: #000;
+  --grey-black: #f3f5f8;
 }
 .dark-mode {
   --purple-white: #fff;
+  --purple-black: #000000dd;
   --white-lightBlack: #37383c;
+  --black-white: #fff;
+  --grey-black: #222326;
 }
 
 @media (max-width: 700px) {
-  @import "./mobile/nav", "./mobile/section-search";
+  @import "./mobile/nav", "./mobile/section-search", "./mobile/section-trends",
+    "./mobile/footer", "./mobile/favs&my-gifs";
 }

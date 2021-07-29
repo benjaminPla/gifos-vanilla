@@ -5,14 +5,48 @@
           box-sizing: border-box;
 }
 
+.hover:hover {
+  cursor: pointer;
+  -webkit-animation: hover 0.2s linear forwards;
+          animation: hover 0.2s linear forwards;
+}
+
+@-webkit-keyframes hover {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes hover {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
 body {
   --purple-white: #572ee5;
+  --purple-black: #572ee5dd;
   --white-lightBlack: #fff;
+  --black-white: #000;
+  --grey-black: #f3f5f8;
 }
 
 .dark-mode {
   --purple-white: #fff;
+  --purple-black: #000000dd;
   --white-lightBlack: #37383c;
+  --black-white: #fff;
+  --grey-black: #222326;
 }
 
 @media (max-width: 700px) {
@@ -25,8 +59,38 @@ body {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    height: 95px;
+    background-color: var(--white-lightBlack);
   }
-  #section-main {
+  nav #icon-hamb {
+    color: var(--purple-white);
+  }
+  nav .container-hamb {
+    height: 0;
+    overflow: hidden;
+    color: #fff;
+    background-color: var(--purple-black);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 90px;
+    list-style: none;
+    font-family: "Montserrat", "sans-serif";
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 60px;
+    text-align: center;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  nav .hamb-display {
+    height: 180px;
+  }
+  #section-main #div-search {
     text-align: center;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -41,11 +105,11 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-  #section-main #div-search {
+    padding: 0 0 2rem 0;
     background-color: var(--white-lightBlack);
   }
   #section-main #div-search h1 {
+    padding: 1rem;
     display: inline-block;
     font-family: "Montserrat", "sans-serif";
     font-weight: 700;
@@ -63,6 +127,8 @@ body {
   }
   #section-main #div-search .input-container {
     position: relative;
+    padding-bottom: 1rem;
+    width: 100%;
   }
   #section-main #div-search input {
     outline: none;
@@ -87,11 +153,125 @@ body {
   #section-main #div-search #icon-search {
     position: absolute;
     width: 20px;
-    top: 30%;
+    top: 23%;
     right: 10%;
   }
-  #section-main #div-search #icon-search:hover {
-    cursor: pointer;
+  #section-main #div-search #section-main-footer {
+    text-align: center;
+  }
+  #section-main #div-search #section-main-footer h2 {
+    font-family: "Montserrat", "sans-serif";
+    font-weight: 700;
+    color: var(--purple-white);
+    padding-bottom: 1rem;
+  }
+  #section-main #div-search #section-main-footer p {
+    font-family: "Roboto", "sans-serif";
+    font-weight: 400;
+    color: var(--purple-white);
+  }
+  #section-trends {
+    padding: 1rem 0;
+    background-color: var(--grey-black);
+    text-align: center;
+  }
+  #section-trends h2 {
+    font-family: "Montserrat", "sans-serif";
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--purple-white);
+    padding: 1rem;
+  }
+  #section-trends p {
+    font-family: "Roboto", "sans-serif";
+    font-size: 16px;
+    color: var(--black-white);
+    line-height: 23px;
+  }
+  #section-trends .trends-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(243px, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(243px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    overflow: scroll;
+  }
+  #section-trends .trends-grid .gif {
+    border: 1px solid black;
+    width: 100%;
+    height: 187px;
+  }
+  #section-trends .trends-grid::-webkit-scrollbar {
+    display: none;
+  }
+  footer {
+    padding: 1rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 5px solid var(--purple-black);
+    line-height: 3rem;
+    font-family: "Roboto", "sans-serif";
+    font-size: 15px;
+    color: var(--black-white);
+    background-color: var(--white-lightBlack);
+  }
+  footer .fab {
+    margin: 0 0.5rem;
+  }
+  #section-main #div-favs,
+  #section-main #div-my-gifs {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0 0 2rem 0;
+    background-color: var(--white-lightBlack);
+  }
+  #section-main #div-favs h1,
+  #section-main #div-my-gifs h1 {
+    font-family: "Montserrat", "sans-serif";
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--purple-white);
+    line-height: 30px;
+  }
+  #section-main #div-favs #section-favs-grid,
+  #section-main #div-favs #section-my-gifs-grid,
+  #section-main #div-my-gifs #section-favs-grid,
+  #section-main #div-my-gifs #section-my-gifs-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(156px, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(156px, 1fr));
+    gap: 1rem;
+    padding: 2rem 1rem;
+  }
+  #section-main #div-favs #section-favs-grid .gif,
+  #section-main #div-favs #section-my-gifs-grid .gif,
+  #section-main #div-my-gifs #section-favs-grid .gif,
+  #section-main #div-my-gifs #section-my-gifs-grid .gif {
+    border: 1px solid black;
+    width: 100%;
+    height: 120px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

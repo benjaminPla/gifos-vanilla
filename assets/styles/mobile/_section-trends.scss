@@ -1,0 +1,33 @@
+#section-trends {
+  padding: 1rem 0;
+  background-color: var(--grey-black);
+  text-align: center;
+  h2 {
+    font-family: $Montserrat;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--purple-white);
+    padding: 1rem;
+  }
+  p {
+    font-family: $Roboto;
+    font-size: 16px;
+    color: var(--black-white);
+    line-height: 23px;
+  }
+  .trends-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(243px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    overflow: scroll;
+    .gif {
+      border: 1px solid black;
+      width: 100%;
+      height: 187px;
+    }
+  }
+  .trends-grid::-webkit-scrollbar {
+    display: none;
+  }
+}

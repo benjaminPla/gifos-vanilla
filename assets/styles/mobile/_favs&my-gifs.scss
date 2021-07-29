@@ -1,0 +1,31 @@
+#section-main {
+  #div-favs,
+  #div-my-gifs {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0 2rem 0;
+    background-color: var(--white-lightBlack);
+    h1 {
+      font-family: $Montserrat;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--purple-white);
+      line-height: 30px;
+    }
+    #section-favs-grid,
+    #section-my-gifs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(156px, 1fr));
+      gap: 1rem;
+      padding: 2rem 1rem;
+      .gif {
+        border: 1px solid black;
+        width: 100%;
+        height: 120px;
+      }
+    }
+  }
+}
