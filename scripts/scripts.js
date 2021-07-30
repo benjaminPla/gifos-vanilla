@@ -2,6 +2,7 @@ import { setNav } from "./nav.js";
 import { sectionSearch } from "./sections.js";
 import { fetchTrends } from "./fetchs.js";
 import { createGif } from "./create-gif.js";
+import { camera } from "./camera.js";
 
 if (location.pathname == "/index.html") {
   window.addEventListener("load", () => {
@@ -12,5 +13,6 @@ if (location.pathname == "/index.html") {
 } else {
   window.addEventListener("load", () => {
     setNav();
+    camera();
   });
 }

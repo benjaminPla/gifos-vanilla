@@ -1,0 +1,55 @@
+#section-main {
+  .div-camera {
+    background-color: var(--white-lightBlack);
+    padding: 8rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .camera-img1 {
+      position: absolute;
+      left: 5%;
+      img:nth-child(2n) {
+        position: absolute;
+        top: 19px;
+        left: 125px;
+      }
+    }
+    .camera-img2 {
+      position: absolute;
+      right: 5%;
+      bottom: 0;
+    }
+    .container {
+      margin: 0 15rem;
+      width: 50%;
+      height: 90%;
+      border: 1px solid var(--purple-white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      video {
+        width: 90%;
+        height: 90%;
+      }
+    }
+    .steps {
+      margin: 1rem;
+      display: flex;
+      justify-content: center;
+      border-bottom: 5px solid var(--purple-white);
+      width: 50%;
+    }
+    #btn-start {
+      padding: 0.5rem 1rem;
+      font-family: $Montserrat;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--purple-white);
+      background-color: var(--white-lightBlack);
+      border: 1px solid var(--purple-white);
+      border-radius: 25px;
+    }
+  }
+}
