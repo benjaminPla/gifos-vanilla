@@ -1,4 +1,5 @@
-import { sectionSearch, sectionFavs, sectionMyGifs } from "./dom.js";
+import { sectionSearch, sectionFavs, sectionMyGifs } from "./sections.js";
+
 function setNav() {
   homeBtn();
   hambMenu();

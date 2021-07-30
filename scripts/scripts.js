@@ -1,9 +1,16 @@
 import { setNav } from "./nav.js";
-import { sectionSearch } from "./dom.js";
+import { sectionSearch } from "./sections.js";
 import { fetchTrends } from "./fetchs.js";
 import { createGif } from "./create-gif.js";
-window.addEventListener("load", setNav(), sectionSearch(), trends());
 
-function trends() {
-  createGif(fetchTrends(), "trends-grid");
+if (location.pathname == "/index.html") {
+  window.addEventListener("load", () => {
+    setNav();
+    sectionSearch();
+    createGif(fetchTrends(), "trends-grid");
+  });
+} else {
+  window.addEventListener("load", () => {
+    setNav();
+  });
 }

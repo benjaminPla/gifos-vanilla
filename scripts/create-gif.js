@@ -1,14 +1,16 @@
 async function createGif(data, parent) {
-    let gifs = await data;
-  gifs.data.forEach((gif) => {
+  let gifs = await data;
+  gifs.forEach((gif) => {
     const dom = `
     <div class="gif">
-        <img src="${gif.images.fixed_height.url}" alt="${gif.title}">
+        <img src="${gif.image}" alt="${gif.title}">
         <div class="gif-hover">
             <div class="btns">
-                <img class="gif-btn" src="./assets/imgs/btn-gif-favs.svg" atl="btn-gif-fav">
-                <img class="gif-btn" src="./assets/imgs/btn-gif-download.svg" atl="btn-gif-download">
-                <img class="gif-btn" src="./assets/imgs/btn-gif-expand.svg" atl="btn-gif-expand">
+                <img class="gif-btn btn-favs" src="./assets/imgs/btn-gif-favs.svg" alt="btn-gif-fav">
+                <a href="${gif.download}" download="${gif.title}">
+                    <img class="gif-btn" src="./assets/imgs/btn-gif-download.svg" alt="btn-gif-download">
+                <a/>
+                <img class="gif-btn" src="./assets/imgs/btn-gif-expand.svg" alt="btn-gif-expand">
             </div>
             <div class="info">
                 <span class="user-name">${gif.username}</span>
@@ -20,4 +22,13 @@ async function createGif(data, parent) {
   });
 }
 
-export { createGif };
+class Gif {
+  constructor(image, title, userName, download) {
+    this.image = image;
+    this.title = title;
+    this.userName = userName;
+    this.download = download;
+  }
+}
+
+export { createGif, Gif };
