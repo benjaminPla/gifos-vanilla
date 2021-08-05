@@ -1,10 +1,14 @@
+import { api_key } from "./scripts.js";
+import { createGif } from "./create-gif.js";
+import { fetchEndPoint } from "./fetchs.js";
+
 function sectionSearch() {
   const dom = `
 <div id="div-search">
   <h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
   <img src="./assets/imgs/main-img.svg" alt="main-img">
   <div class="input-container">
-    <input type="text" placeholder="Busca GIFOS y más">
+    <input id="input-search" type="text" placeholder="Busca GIFOS y más">
     <img id="icon-search" class="hover" src="./assets/imgs/icon-search.svg" alt="icon-search">
   </div>
   <div id="section-main-footer">
@@ -13,6 +17,7 @@ function sectionSearch() {
   </div>
 </div>`;
   document.getElementById("section-main").innerHTML = dom;
+  setFunctionsSectionSearch();
 }
 
 function sectionFavs() {
@@ -45,6 +50,19 @@ function sectionMyGifs() {
   </div>
 </div>`;
   document.getElementById("section-main").innerHTML = dom;
+}
+
+function setFunctionsSectionSearch() {
+  const input = document.getElementById("input-search");
+  input.addEventListener("keyup", (k) => {
+    let value = input.value;
+    if (k.key == "Enter") {
+      document.getElementById("section-main-footer").innerHTML =
+        '<div id="search-grid"></div>';
+      const endPoint = `https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${value}&offset=0&limit=12`;
+      createGif(fetchEndPoint(endPoint), "search-grid");
+    }
+  });
 }
 
 export { sectionSearch, sectionFavs, sectionMyGifs };

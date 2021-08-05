@@ -1,3 +1,5 @@
+import { localStorageFavs, setLocalStorageFavs } from "./local-storage.js";
+
 async function createGif(data, parent) {
   let gifs = await data;
   gifs.forEach((gif) => {
@@ -20,6 +22,7 @@ async function createGif(data, parent) {
     </div>`;
     document.getElementById(parent).innerHTML += dom;
   });
+  // setBtns(data);
 }
 
 class Gif {
@@ -30,5 +33,16 @@ class Gif {
     this.download = download;
   }
 }
+
+// function setBtns(data) {
+//   const btnFavs = document.querySelectorAll(".btn-favs");
+//   btnFavs.forEach((btn, i) => {
+//     let gifs = await data;
+//     btn.addEventListener("click", () => {
+//       localStorageFavs.push(gifs[i]);
+//       setLocalStorageFavs();
+//     });
+//   });
+// }
 
 export { createGif, Gif };
