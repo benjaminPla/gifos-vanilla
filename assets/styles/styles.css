@@ -382,24 +382,13 @@ body {
     width: 100%;
   }
   #section-main #div-search .input-container input {
+    padding-left: 3rem;
     outline: none;
     width: 50%;
     height: 50px;
     background-color: var(--white-lightBlack);
     border: 1px solid var(--purple-white);
     border-radius: 27px;
-  }
-  #section-main #div-search .input-container input::-webkit-input-placeholder {
-    padding-left: 2rem;
-  }
-  #section-main #div-search .input-container input:-ms-input-placeholder {
-    padding-left: 2rem;
-  }
-  #section-main #div-search .input-container input::-ms-input-placeholder {
-    padding-left: 2rem;
-  }
-  #section-main #div-search .input-container input::placeholder {
-    padding-left: 2rem;
   }
   #section-main #div-search .input-container #icon-search {
     position: absolute;
