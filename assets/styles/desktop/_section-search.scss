@@ -25,31 +25,39 @@
     }
     .input-container {
       position: relative;
-      padding-bottom: 1rem;
-      width: 100%;
+      width: 50%;
+      background-color: var(--white-lightBlack);
+      border: 1px solid var(--purple-white);
+      border-radius: 27px;
+      list-style: none;
+      text-align: left;
+      padding-left: 3rem;
       input {
-        padding-left: 3rem;
         outline: none;
-        width: 50%;
+        width: 100%;
         height: 50px;
         background-color: var(--white-lightBlack);
-        border: 1px solid var(--purple-white);
-        border-radius: 27px;
+        border: none;
+        border-radius: 50px;
       }
       #icon-search {
         position: absolute;
         width: 20px;
-        top: 23%;
-        right: 29%;
+        top: 15px;
+        right: 3rem;
       }
       #icon-search-clear {
         position: absolute;
         width: 15px;
-        top: 25%;
-        right: 29%;
+        top: 17px;
+        right: 3rem;
+      }
+      li {
+        padding: 0.2rem 0;
       }
     }
     #search-title {
+      padding: 1rem;
       font-family: $Montserrat;
       font-weight: 700;
       font-size: 35px;

@@ -15,9 +15,9 @@ const events = {
     },
   },
   search: {
-    toggleSearchIcon: () => {
+    searchIcon: () => {
       document.getElementById("input-search").addEventListener("input", () => {
-        if (document.getElementById("input-search")) {
+        if (document.getElementById("icon-search")) {
           document.getElementById("input-search-icon-container").innerHTML =
             dom.inputSearchIconClear;
           chainsEvents.search.inputSearchClear();
@@ -27,13 +27,14 @@ const events = {
         }
       });
     },
-    searchSuggestions: () => {
+    suggestions: () => {
       const inputSearch = document.getElementById("input-search");
       inputSearch.addEventListener("input", async () => {
-        let fetch = await globals.fetch(
+        let suggestions = await globals.fetch(
           endpoints.suggestions(inputSearch.value)
         );
-        gifs.suggestions(fetch);
+        gifs.suggestions(suggestions);
+        chainsEvents.search.suggestionSearchOnClick();
       });
     },
     searchOnEnter: () => {
@@ -61,6 +62,19 @@ const chainsEvents = {
           document.getElementById("input-search-icon-container").innerHTML =
             dom.inputSearchIconSearch;
         });
+    },
+    suggestionSearchOnClick: () => {
+      document.querySelectorAll(".suggestion").forEach((suggestion) => {
+        suggestion.addEventListener("click", () => {
+          globals.clearNode("search-grid");
+          gifs.createSearchGif(suggestion.textContent);
+          document.getElementById("search-title").textContent =
+            suggestion.textContent;
+          globals.clearNode("suggestions-container");
+          document.getElementById("input-search").value =
+            suggestion.textContent;
+        });
+      });
     },
     viewMoreBtn: () => {
       const btn = document.getElementById("search-view-more");

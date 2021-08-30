@@ -2,6 +2,7 @@ import { globals } from "./globals.js";
 
 const dom = {
   gif: (gif, parent) => {
+    console.log(gif.download)
     const dom = `
       <div class="gif">
       <img src="${gif.image}" alt="${gif.title}">
@@ -26,10 +27,11 @@ const dom = {
     <h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
     <img src="./assets/imgs/main-img.svg" alt="main-img">
     <div class="input-container">
-      <input id="input-search" type="text" placeholder="Busca GIFOS y más">
+      <input id="input-search" type="text" placeholder="Busca GIFOS y más" autocomplete="off">
       <div id="input-search-icon-container">
         <img id="icon-search" src="./assets/imgs/icon-search.svg" alt="icon-search">
-      </div> 
+      </div>
+      <div id="suggestions-container"></div> 
     </div>
     <h2 id="search-title"></h2>
     <div id="search-grid"></div>

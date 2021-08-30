@@ -10,7 +10,7 @@ const gifs = {
         image: gif.images.original.url,
         title: gif.title,
         userName: gif.usernam,
-        // download: blob,
+        download: gif.url,
       };
       dom.gif(newGif, "trends-grid");
     });
@@ -22,7 +22,7 @@ const gifs = {
         image: gif.images.original.url,
         title: gif.title,
         userName: gif.usernam,
-        url: gif.url,
+        download: gif.url,
       };
       dom.gif(newGif, "search-grid");
     });
@@ -30,8 +30,8 @@ const gifs = {
   suggestions: (data) => {
     data.data.forEach((suggestion) => {
       document.getElementById(
-        "input-search-icon-container"
-      ).innerHTML += `<li>${suggestion.name}</li>`;
+        "suggestions-container"
+      ).innerHTML += `<li class="suggestion">${suggestion.name}</li>`;
     });
   },
 };

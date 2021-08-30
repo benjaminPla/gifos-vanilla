@@ -378,31 +378,39 @@ body {
   }
   #section-main #div-search .input-container {
     position: relative;
-    padding-bottom: 1rem;
-    width: 100%;
-  }
-  #section-main #div-search .input-container input {
-    padding-left: 3rem;
-    outline: none;
     width: 50%;
-    height: 50px;
     background-color: var(--white-lightBlack);
     border: 1px solid var(--purple-white);
     border-radius: 27px;
+    list-style: none;
+    text-align: left;
+    padding-left: 3rem;
+  }
+  #section-main #div-search .input-container input {
+    outline: none;
+    width: 100%;
+    height: 50px;
+    background-color: var(--white-lightBlack);
+    border: none;
+    border-radius: 50px;
   }
   #section-main #div-search .input-container #icon-search {
     position: absolute;
     width: 20px;
-    top: 23%;
-    right: 29%;
+    top: 15px;
+    right: 3rem;
   }
   #section-main #div-search .input-container #icon-search-clear {
     position: absolute;
     width: 15px;
-    top: 25%;
-    right: 29%;
+    top: 17px;
+    right: 3rem;
+  }
+  #section-main #div-search .input-container li {
+    padding: 0.2rem 0;
   }
   #section-main #div-search #search-title {
+    padding: 1rem;
     font-family: "Montserrat", "sans-serif";
     font-weight: 700;
     font-size: 35px;

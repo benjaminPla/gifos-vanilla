@@ -10,7 +10,7 @@ const sections = {
       globals.clearNode("section-main");
       globals.fillNode("section-main", dom.search);
       events.search.searchOnEnter();
-      events.search.searchSuggestions();
+      events.search.suggestions();
     });
     document
       .getElementById("icon-hamb")
@@ -31,9 +31,9 @@ const sections = {
   },
   setSearch: () => {
     globals.fillNode("section-main", dom.search);
-    events.search.toggleSearchIcon();
+    events.search.searchIcon();
     events.search.searchOnEnter();
-    events.search.searchSuggestions();
+    events.search.suggestions();
   },
   setTrendings: () => {
     sessionStorage.setItem("trends-offset", 0);
