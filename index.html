@@ -1,75 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="./assets/imgs/icon-favs.svg" />
-    <title>pla-benjamin-gifos</title>
-    <script
-      src="https://kit.fontawesome.com/b7f96f5dbe.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/styles/styles.css" />
-  </head>
 
-  <body>
-    <nav>
-      <img
-        id="home-btn"
-        class="hover"
-        src="./assets/imgs/logo.svg"
-        alt="logo"
-      />
-      <i id="icon-hamb" class="fas fa-bars hover"></i>
-      <div class="container-hamb">
-        <li id="theme-btn" class="hover">Modo Nocturno</li>
-        <li id="favs-btn" class="hover">Favoritos</li>
-        <li id="my-gifs-btn" class="hover">Mis GIFOS</li>
-        <li id="create-gif-btn" class="hover">
-          <a href="/camera.html"
-            ><img src="./assets/imgs/icon-create-gif.svg" alt="icon-create-gif"
-          /></a>
-        </li>
-      </div>
-    </nav>
-    <section id="section-main"></section>
-    <section id="section-trends">
-      <h2>Trending GIFOS</h2>
-      <p>Mira los últimos GIFOS de nuestra comunidad.</p>
-      <div class="trends-grid-container">
-        <button class="trends-btns hover">&lt;</button>
-        <div id="trends-grid"></div>
-        <button class="trends-btns hover">&gt;</button>
-      </div>
-    </section>
-    <footer>
-      <p>Compartir en:</p>
-      <div class="icons">
-        <a href="https://www.facebook.com" target="_blank"
-          ><i class="fab hover fa-facebook-f"></i
-        ></a>
-        <a href="https://www.twitter.com" target="_blank"
-          ><i class="fab hover fa-twitter"></i
-        ></a>
-        <a href="https://instagram.com" target="_blank"
-          ><i class="fab hover fa-instagram"></i
-        ></a>
-      </div>
-      <p>&copy; GIFOS 2021 All Rights Reserved.</p>
-    </footer>
-    <script type="module" src="./scripts/scripts.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="./assets/imgs/icon-favs.svg" />
+  <title>pla-benjamin-gifos</title>
+  <script src="https://kit.fontawesome.com/b7f96f5dbe.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/styles/styles.css" />
+</head>
+
+<body>
+  <nav>
+    <img id="home-btn" class="hover" src="./assets/imgs/logo.svg" alt="logo" />
+    <i id="icon-hamb" class="fas fa-bars hover"></i>
+    <div class="container-hamb">
+      <li id="theme-btn" class="hover">Modo Nocturno</li>
+      <li id="favs-btn" class="hover">Favoritos</li>
+      <li id="my-gifs-btn" class="hover">Mis GIFOS</li>
+      <li id="create-gif-btn" class="hover">
+        <a href="/camera.html"><img src="./assets/imgs/icon-create-gif.svg" alt="icon-create-gif" /></a>
+      </li>
+    </div>
+  </nav>
+  <section id="section-main"></section>
+  <section id="section-trends">
+    <h2>Trending GIFOS</h2>
+    <p>Mira los últimos GIFOS de nuestra comunidad.</p>
+    <div class="trends-grid-container">
+      <button class="trends-carousel-btn" class="hover">&lt;</button>
+      <div id="trends-grid"></div>
+      <button class="trends-carousel-btn" class="hover">&gt;</button>
+    </div>
+  </section>
+  <footer>
+    <p>Compartir en:</p>
+    <div class="icons">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab hover fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fab hover fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab hover fa-instagram"></i></a>
+    </div>
+    <p>&copy; GIFOS 2021 All Rights Reserved.</p>
+  </footer>
+  <script type="module" src="./scripts/main.js"></script>
+</body>
+
 </html>
