@@ -1,5 +1,3 @@
-import { globals } from "./globals.js";
-
 const dom = {
   gif: (gif, parent) => {
     const dom = `
@@ -7,7 +5,7 @@ const dom = {
       <img src="${gif.image}" alt="${gif.title}">
       <div class="gif-hover">
       <div class="btns">
-      <img class="gif-btn btn-favs" src="./assets/imgs/btn-gif-favs.svg" alt="btn-gif-fav">
+      <img id='${gif.id}' class="gif-btn btn-favs" src="./assets/imgs/btn-gif-favs.svg" alt="btn-gif-fav">
       <a href="${gif.download}" download="${gif.title}">
       <img class="gif-btn" src="./assets/imgs/btn-gif-download.svg" alt="btn-gif-download">
       <a/>

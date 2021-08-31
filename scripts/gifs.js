@@ -8,6 +8,7 @@ const gifs = {
     data.data.forEach(async (gif) => {
       let blob = await fetch(gif.images.original.url).then((res) => res.blob());
       const newGif = {
+        id: gif.id,
         image: gif.images.original.url,
         title: gif.title,
         userName: gif.usernam,
@@ -21,6 +22,7 @@ const gifs = {
     data.data.forEach(async (gif) => {
       let blob = await fetch(gif.images.original.url).then((res) => res.blob());
       const newGif = {
+        id: gif.id,
         image: gif.images.original.url,
         title: gif.title,
         userName: gif.usernam,
