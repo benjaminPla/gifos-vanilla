@@ -67,6 +67,23 @@ const events = {
         }
       });
     },
+    expand: () => {
+      addEventListener("click", (element) => {
+        if (element.target.alt == "btn-gif-expand") {
+          let parent = element.target.offsetParent;
+          if (parent.classList[0] == "btns") {
+            let expandDiv = document.createElement("div");
+            expandDiv.setAttribute("id", "expand");
+            expandDiv.classList.add("expand");
+            expandDiv.appendChild(parent.offsetParent.offsetParent); //hacer createGif en ves de appendChild
+            // gifs.createExpand(gif);  // ver tema de sessionStorage(expand)
+            document.querySelector("body").appendChild(expandDiv);
+          } else {
+            document.querySelector(".expand").remove();
+          }
+        }
+      });
+    },
   },
 };
 

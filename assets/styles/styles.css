@@ -838,4 +838,22 @@ body {
     border-radius: 25px;
   }
 }
+
+.expand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  background-color: #572ee5DD;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 300;
+}
 /*# sourceMappingURL=styles.css.map */

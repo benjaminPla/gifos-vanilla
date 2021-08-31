@@ -44,6 +44,16 @@ const gifs = {
     };
     dom.gif(newGif, "section-favs-grid");
   },
+  createExpand: async (gif) => {
+    const newGif = {
+      id: gif.id,
+      image: gif.images.original.url,
+      title: gif.title,
+      userName: gif.usernam,
+      download: URL.createObjectURL(blob),
+    };
+    dom.gif(newGif, "expand");
+  },
   suggestions: (data) => {
     data.data.forEach((suggestion) => {
       document.getElementById(

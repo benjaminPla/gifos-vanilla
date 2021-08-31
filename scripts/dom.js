@@ -9,7 +9,7 @@ const dom = {
       <a href="${gif.download}" download="${gif.title}">
       <img class="gif-btn" src="./assets/imgs/btn-gif-download.svg" alt="btn-gif-download">
       <a/>
-      <img class="gif-btn" src="./assets/imgs/btn-gif-expand.svg" alt="btn-gif-expand">
+      <img class="gif-btn expand-btn" src="./assets/imgs/btn-gif-expand.svg" alt="btn-gif-expand">
       </div>
       <div class="info">
       <span class="user-name">${gif.userName}</span>

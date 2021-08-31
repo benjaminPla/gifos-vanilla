@@ -8,3 +8,4 @@ sections.setOthers();
 
 sessionStorage.setItem("favs", "");
 events.gif.addFavs();
+events.gif.expand();
