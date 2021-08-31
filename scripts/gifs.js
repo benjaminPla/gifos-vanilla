@@ -31,6 +31,19 @@ const gifs = {
       dom.gif(newGif, "search-grid");
     });
   },
+  createFavGif: async (id) => {
+    if (id === "") return;
+    let data = await fetch(endpoints.id(id)).then((res) => res.json());
+    // let blob = await fetch(data.data.url).then((res) => res.blob()); //cors
+    const newGif = {
+      id: data.data.id,
+      image: data.data.images.original.url,
+      title: data.data.title,
+      userName: data.data.usernam,
+      // download: URL.createObjectURL(blob),
+    };
+    dom.gif(newGif, "section-favs-grid");
+  },
   suggestions: (data) => {
     data.data.forEach((suggestion) => {
       document.getElementById(

@@ -6,4 +6,5 @@ sections.setSearch();
 sections.setTrendings();
 sections.setOthers();
 
+sessionStorage.setItem("favs", "");
 events.gif.addFavs();

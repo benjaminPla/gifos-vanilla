@@ -12,6 +12,9 @@ const endpoints = {
   suggestions: (value) => {
     return `https://api.giphy.com/v1/gifs/search/tags?api_key=${globals.apiKey}&q=${value}`;
   },
+  id: (id) => {
+    return `https://api.giphy.com/v1/gifs/${id}?api_key=${globals.apiKey}`;
+  },
 };
 
 export { endpoints };

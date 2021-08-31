@@ -53,13 +53,16 @@ const events = {
   },
   gif: {
     addFavs: () => {
-      sessionStorage.setItem("favs", "");
       addEventListener("click", (element) => {
         if (element.target.alt == "btn-gif-fav") {
           const myFavs = [sessionStorage.getItem("favs")];
           const myFavsToArray = sessionStorage.getItem("favs").split(",");
-          if (myFavsToArray.includes(element.target.id)) return;
-          myFavs.push(element.target.id);
+          if (myFavsToArray.includes(element.target.id)) {
+            // myFavsToArray.splice(element.target.id);
+            return;
+          } else {
+            myFavs.push(element.target.id);
+          }
           sessionStorage.setItem("favs", myFavs);
         }
       });

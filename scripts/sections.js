@@ -23,6 +23,7 @@ const sections = {
       events.nav.toggleHambMenu();
       globals.clearNode("section-main");
       globals.fillNode("section-main", dom.favs);
+      chainsSections.setFavs();
     });
     document.getElementById("my-gifs-btn").addEventListener("click", () => {
       events.nav.toggleHambMenu();
@@ -51,6 +52,17 @@ const sections = {
   },
   setOthers: () => {
     window.addEventListener("scroll", globals.navShadow);
+  },
+};
+
+const chainsSections = {
+  setFavs: () => {
+    sessionStorage
+      .getItem("favs")
+      .split(",")
+      .forEach((gif) => {
+        gifs.createFavGif(gif);
+      });
   },
 };
 
