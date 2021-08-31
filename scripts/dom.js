@@ -2,7 +2,6 @@ import { globals } from "./globals.js";
 
 const dom = {
   gif: (gif, parent) => {
-    console.log(gif.download)
     const dom = `
       <div class="gif">
       <img src="${gif.image}" alt="${gif.title}">

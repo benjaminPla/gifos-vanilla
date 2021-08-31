@@ -6,23 +6,25 @@ const gifs = {
   createTrendGif: async () => {
     let data = await globals.fetch(endpoints.trends());
     data.data.forEach(async (gif) => {
+      let blob = await fetch(gif.images.original.url).then((res) => res.blob());
       const newGif = {
         image: gif.images.original.url,
         title: gif.title,
         userName: gif.usernam,
-        download: gif.url,
+        download: URL.createObjectURL(blob),
       };
       dom.gif(newGif, "trends-grid");
     });
   },
   createSearchGif: async (value) => {
     let data = await globals.fetch(endpoints.search(value));
-    data.data.forEach((gif) => {
+    data.data.forEach(async (gif) => {
+      let blob = await fetch(gif.images.original.url).then((res) => res.blob());
       const newGif = {
         image: gif.images.original.url,
         title: gif.title,
         userName: gif.usernam,
-        download: gif.url,
+        download: URL.createObjectURL(blob),
       };
       dom.gif(newGif, "search-grid");
     });

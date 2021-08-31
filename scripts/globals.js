@@ -23,10 +23,10 @@ const globals = {
     let offset = Number(sessionStorage.getItem("trends-offset")) + numb;
     sessionStorage.setItem("trends-offset", offset);
   },
-  handleSearchOffset: (numb) => {
-    let offset = Number(sessionStorage.getItem("search-offset")) + numb;
-    sessionStorage.setItem("search-offset", offset);
-  },
+  // handleSearchOffset: (numb) => {
+  //   let offset = Number(sessionStorage.getItem("search-offset")) + numb;
+  //   sessionStorage.setItem("search-offset", offset);
+  // },
 };
 
 export { globals };

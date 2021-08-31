@@ -42,6 +42,7 @@ const events = {
       inputSearch.addEventListener("keypress", (key) => {
         if (key.key === "Enter") {
           globals.clearNode("search-grid");
+          globals.clearNode("suggestions-container");
           gifs.createSearchGif(inputSearch.value);
           document.getElementById("search-title").textContent =
             inputSearch.value;
