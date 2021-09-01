@@ -55,15 +55,11 @@ const events = {
     addFavs: () => {
       addEventListener("click", (element) => {
         if (element.target.alt == "btn-gif-fav") {
-          const myFavs = [sessionStorage.getItem("favs")];
-          const myFavsToArray = sessionStorage.getItem("favs").split(",");
-          if (myFavsToArray.includes(element.target.id)) {
-            // myFavsToArray.splice(element.target.id);
-            return;
-          } else {
-            myFavs.push(element.target.id);
-          }
-          sessionStorage.setItem("favs", myFavs);
+          const favs = localStorage.getItem("favs").split(",");
+          const id = element.target.id;
+          let i = favs.indexOf(id);
+          i > 0 ? favs.splice(i, 1) : favs.push(id);
+          localStorage.setItem("favs", favs);
         }
       });
     },

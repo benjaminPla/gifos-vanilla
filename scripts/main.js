@@ -6,6 +6,7 @@ sections.setSearch();
 sections.setTrendings();
 sections.setOthers();
 
-sessionStorage.setItem("favs", "");
+let setLocalStorageFavs = localStorage.getItem("favs") || [];
+localStorage.setItem("favs", setLocalStorageFavs);
 events.gif.addFavs();
 events.gif.expand();

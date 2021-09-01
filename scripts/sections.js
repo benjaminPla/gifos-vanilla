@@ -57,7 +57,7 @@ const sections = {
 
 const chainsSections = {
   setFavs: () => {
-    sessionStorage
+    localStorage
       .getItem("favs")
       .split(",")
       .forEach((gif) => {
