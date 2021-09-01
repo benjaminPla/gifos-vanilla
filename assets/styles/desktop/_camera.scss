@@ -40,8 +40,20 @@
       justify-content: center;
       border-bottom: 5px solid var(--purple-white);
       width: 50%;
+      font-family: $Roboto;
+      color: var(--purple-white);
+      span {
+        margin: 0.5rem;
+        padding: 0.2rem 0.5rem;
+        border: 1px solid var(--purple-white);
+        border-radius: 50%;
+      }
+      .span-active {
+        background-color: var(--purple-white);
+        color: var(--white-lightBlack);
+      }
     }
-    #btn-start {
+    .btn-video {
       padding: 0.5rem 1rem;
       font-family: $Montserrat;
       font-weight: 700;

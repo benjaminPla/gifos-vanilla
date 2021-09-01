@@ -821,8 +821,20 @@ body {
             justify-content: center;
     border-bottom: 5px solid var(--purple-white);
     width: 50%;
+    font-family: "Roboto", "sans-serif";
+    color: var(--purple-white);
   }
-  #section-main .div-camera #btn-start {
+  #section-main .div-camera .steps span {
+    margin: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--purple-white);
+    border-radius: 50%;
+  }
+  #section-main .div-camera .steps .span-active {
+    background-color: var(--purple-white);
+    color: var(--white-lightBlack);
+  }
+  #section-main .div-camera .btn-video {
     padding: 0.5rem 1rem;
     font-family: "Montserrat", "sans-serif";
     font-weight: 700;
