@@ -15,6 +15,7 @@
       color: var(--purple-white);
       line-height: 30px;
     }
+    #section-my-gifs-grid,
     #section-favs-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(260px, 1fr));

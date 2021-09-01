@@ -29,6 +29,7 @@ const sections = {
     document.getElementById("my-gifs-btn").addEventListener("click", () => {
       events.nav.toggleHambMenu();
       globals.fillNode("section-main", dom.myGifs);
+      chainsSections.setMyGifs();
     });
   },
   setSearch: () => {
@@ -60,6 +61,16 @@ const chainsSections = {
       .split(",")
       .forEach((gif) => {
         gifs.createFavGif(gif);
+      });
+  },
+  setMyGifs: () => {
+    localStorage
+      .getItem("myGifs")
+      .split(",")
+      .forEach((gif) => {
+        // hacer fetch por id
+        console.log(gif);
+        gifs.createMyGifsGif(gif);
       });
   },
 };

@@ -13,11 +13,16 @@ async function setCamera() {
     if (btn.getAttribute("id") === "upload") {
       let form = new FormData();
       form.append("file", blob, "myGif");
-      //   console.log(form.get("file"));
       await fetch(
-        `https://upload.giphy.com/vi/gifs?api_key=${globals.apiKey}`,
+        `https://upload.giphy.com/v1/gifs?api_key=${globals.apiKey}`,
         { method: "POST", body: form }
-      );
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          const myGifs = localStorage.getItem("myGifs").split(",");
+          myGifs.push(res.data.id);
+          localStorage.setItem("myGifs", myGifs);
+        });
     } else if (btn.getAttribute("id") === "stop") {
       recorder.stopRecording();
       btn.textContent = "SUBIR GIFO";

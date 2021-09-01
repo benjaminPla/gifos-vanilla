@@ -11,5 +11,6 @@ if (location.pathname === "/index.html") {
 sections.setNav();
 
 localStorage.setItem("favs", localStorage.getItem("favs") || []);
+localStorage.setItem("myGifs", localStorage.getItem("myGifs") || []);
 events.gif.addFavs();
 events.gif.expand();

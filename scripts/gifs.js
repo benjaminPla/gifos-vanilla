@@ -44,6 +44,17 @@ const gifs = {
     };
     dom.gif(newGif, "section-favs-grid");
   },
+  createMyGifsGif: async (id) => {
+    if (id === "") return;
+    let data = await fetch(endpoints.id(id)).then((res) => res.json());
+    const newGif = {
+      id: data.data.id,
+      image: data.data.images.original.url,
+      title: data.data.title,
+      userName: data.data.username,
+    };
+    dom.gif(newGif, "section-my-gifs-grid");
+  },
   createExpand: async (gif) => {
     const newGif = {
       id: gif.id,
