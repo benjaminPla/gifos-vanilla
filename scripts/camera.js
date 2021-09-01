@@ -1,15 +1,23 @@
+import { globals } from "./globals.js";
+
 async function setCamera() {
   let stream = await navigator.mediaDevices.getUserMedia({
     audio: false,
     video: true,
   });
-  let recorder = new RecordRTCPromisesHandler(stream, { type: "gif" });
+  let recorder = null;
   let blob = null;
 
   const btn = document.querySelector("button");
   btn.addEventListener("click", async () => {
     if (btn.getAttribute("id") === "upload") {
-      invokeSaveAsDialog(blob);
+      let form = new FormData();
+      form.append("file", blob, "myGif");
+      //   console.log(form.get("file"));
+      await fetch(
+        `https://upload.giphy.com/vi/gifs?api_key=${globals.apiKey}`,
+        { method: "POST", body: form }
+      );
     } else if (btn.getAttribute("id") === "stop") {
       recorder.stopRecording();
       btn.textContent = "SUBIR GIFO";
@@ -21,6 +29,7 @@ async function setCamera() {
       btn.textContent = "FINALIZAR";
       btn.setAttribute("id", "stop");
     } else if (btn.getAttribute("id") === "start") {
+      recorder = new RecordRTCPromisesHandler(stream, { type: "gif" });
       video.srcObject = stream;
       video.play();
       btn.textContent = "GRABAR";
