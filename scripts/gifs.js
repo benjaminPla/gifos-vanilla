@@ -11,7 +11,7 @@ const gifs = {
         id: gif.id,
         image: gif.images.original.url,
         title: gif.title,
-        userName: gif.usernam,
+        userName: gif.username,
         download: URL.createObjectURL(blob),
       };
       dom.gif(newGif, "trends-grid");
@@ -25,7 +25,7 @@ const gifs = {
         id: gif.id,
         image: gif.images.original.url,
         title: gif.title,
-        userName: gif.usernam,
+        userName: gif.username,
         download: URL.createObjectURL(blob),
       };
       dom.gif(newGif, "search-grid");
@@ -39,7 +39,7 @@ const gifs = {
       id: data.data.id,
       image: data.data.images.original.url,
       title: data.data.title,
-      userName: data.data.usernam,
+      userName: data.data.username,
       // download: URL.createObjectURL(blob),
     };
     dom.gif(newGif, "section-favs-grid");
@@ -49,7 +49,7 @@ const gifs = {
       id: gif.id,
       image: gif.images.original.url,
       title: gif.title,
-      userName: gif.usernam,
+      userName: gif.username,
       download: URL.createObjectURL(blob),
     };
     dom.gif(newGif, "expand");
