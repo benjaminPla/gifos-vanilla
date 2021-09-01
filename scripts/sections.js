@@ -5,6 +5,7 @@ import { gifs } from "./gifs.js";
 
 const sections = {
   setNav: () => {
+    window.addEventListener("scroll", globals.navShadow);
     document.getElementById("home-btn").addEventListener("click", () => {
       events.nav.toggleHambMenu();
       globals.clearNode("section-main");
@@ -50,8 +51,19 @@ const sections = {
       });
     });
   },
-  setOthers: () => {
-    window.addEventListener("scroll", globals.navShadow);
+  setCamera: () => {
+    document.getElementById("btn-start").addEventListener("click", () => {
+      const video = document.getElementById("video");
+      navigator.mediaDevices
+        .getUserMedia({
+          audio: false,
+          video: {},
+        })
+        .then((stream) => {
+          video.srcObject = stream;
+          video.play();
+        });
+    });
   },
 };
 
