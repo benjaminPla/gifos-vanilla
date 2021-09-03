@@ -36,7 +36,6 @@ const sections = {
     globals.fillNode("section-main", dom.search);
     events.search.searchIcon();
     events.search.searchOnEnter();
-    events.search.suggestions();
   },
   setTrendings: () => {
     sessionStorage.setItem("trends-offset", 0);

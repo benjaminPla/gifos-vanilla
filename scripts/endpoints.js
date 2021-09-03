@@ -7,7 +7,11 @@ const endpoints = {
     }&offset=${sessionStorage.getItem("trends-offset")}&limit=3`;
   },
   search: (value) => {
-    return `https://api.giphy.com/v1/gifs/search?api_key=${globals.apiKey}&q=${value}&limit=12&offset=0`;
+    return `https://api.giphy.com/v1/gifs/search?api_key=${
+      globals.apiKey
+    }&q=${value}&limit=12&offset=${
+      sessionStorage.getItem("search-offset").split(",")[1]
+    }`;
   },
   suggestions: (value) => {
     return `https://api.giphy.com/v1/gifs/search/tags?api_key=${globals.apiKey}&q=${value}`;

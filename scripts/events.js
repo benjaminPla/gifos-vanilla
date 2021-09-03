@@ -16,31 +16,36 @@ const events = {
   },
   search: {
     searchIcon: () => {
-      document.getElementById("input-search").addEventListener("input", () => {
-        if (document.getElementById("icon-search")) {
-          document.getElementById("input-search-icon-container").innerHTML =
-            dom.inputSearchIconClear;
-          chainsEvents.search.inputSearchClear();
-        } else {
-          document.getElementById("input-search-icon-container").innerHTML =
-            dom.inputSearchIconSearch;
-        }
-      });
-    },
-    suggestions: () => {
       const inputSearch = document.getElementById("input-search");
       inputSearch.addEventListener("input", async () => {
-        let suggestions = await globals.fetch(
-          endpoints.suggestions(inputSearch.value)
-        );
-        gifs.suggestions(suggestions);
-        chainsEvents.search.suggestionSearchOnClick();
+        if (inputSearch.textContent == "") {
+          if (inputSearch) {
+            document.getElementById("input-search-icon-container").innerHTML =
+              dom.inputSearchIconClear;
+            let suggestions = await globals.fetch(
+              endpoints.suggestions(inputSearch.value)
+            );
+            gifs.suggestions(suggestions);
+            chainsEvents.search.suggestionSearchOnClick();
+            chainsEvents.search.inputSearchClear();
+          } else {
+            document.getElementById("input-search-icon-container").innerHTML =
+              dom.inputSearchIconSearch;
+          }
+        }
       });
     },
     searchOnEnter: () => {
       const inputSearch = document.getElementById("input-search");
       inputSearch.addEventListener("keypress", (key) => {
         if (key.key === "Enter") {
+          const searchOffset = sessionStorage.getItem("search-offset") || '';
+          let offset = 0;
+          if (searchOffset.split(",")[0] == inputSearch.value) {
+            offset = Number(searchOffset.split(",")[1]) + 12;
+          }
+          sessionStorage.setItem("search-offset", [inputSearch.value, offset]);
+
           globals.clearNode("search-grid");
           globals.clearNode("suggestions-container");
           gifs.createSearchGif(inputSearch.value);
@@ -80,7 +85,6 @@ const events = {
         }
       });
     },
-    
   },
 };
 
@@ -93,6 +97,7 @@ const chainsEvents = {
           document.getElementById("input-search").value = "";
           document.getElementById("input-search-icon-container").innerHTML =
             dom.inputSearchIconSearch;
+          globals.clearNode("suggestions-container");
         });
     },
     suggestionSearchOnClick: () => {
@@ -113,6 +118,13 @@ const chainsEvents = {
       btn.classList.add("search-view-more");
       btn.textContent = "VIEW MORE";
       btn.addEventListener("click", () => {
+        const inputSearch = document.getElementById("input-search");
+        const searchOffset = sessionStorage.getItem("search-offset") || '';
+        let offset = 0;
+        if (searchOffset.split(",")[0] == inputSearch.value) {
+          offset = Number(searchOffset.split(",")[1]) + 12;
+        }
+        sessionStorage.setItem("search-offset", [inputSearch.value, offset]);
         globals.clearNode("search-grid");
         gifs.createSearchGif(document.getElementById("input-search").value);
       });
