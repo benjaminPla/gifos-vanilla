@@ -2,7 +2,7 @@ import { events } from "./events.js";
 import { sections } from "./sections.js";
 import { setCamera } from "./camera.js";
 
-if (location.pathname === "/camera.html") {
+if (location.pathname === "/gifos/camera.html") {
   setCamera();
 } else {
   sections.setSearch();
