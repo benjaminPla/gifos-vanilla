@@ -4,7 +4,7 @@ import { setCamera } from "./camera.js";
 
 console.log(location);
 console.log(location.pathname);
-if (location.pathname === "/gifos/camera.html") {
+if (location.pathname === "/camera.html") {
   setCamera();
 } else {
   sections.setSearch();
