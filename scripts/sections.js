@@ -11,6 +11,8 @@ const sections = {
       globals.clearNode("section-main");
       globals.fillNode("section-main", dom.search);
       events.search.searchOnEnter();
+      events.trendsChanger();
+      events.search.searchIcon();
     });
     document
       .getElementById("icon-hamb")

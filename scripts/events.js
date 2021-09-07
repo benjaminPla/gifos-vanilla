@@ -101,11 +101,10 @@ const chainsEvents = {
   trendsChangerEvent: () => {
     document.querySelectorAll(".a-trends").forEach((gif) => {
       gif.addEventListener("click", (e) => {
-        const inputSearch = document.getElementById("input-search");
         globals.clearNode("search-grid");
         globals.clearNode("suggestions-container");
         gifs.createSearchGif(e.target.textContent);
-        document.getElementById("search-title").textContent = inputSearch.value;
+        document.getElementById("search-title").textContent = e.target.textContent;
         chainsEvents.search.viewMoreBtn();
       });
     });
