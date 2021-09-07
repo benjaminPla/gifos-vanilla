@@ -20,6 +20,21 @@
         color: #50e3c2;
       }
     }
+    h2 {
+      font-family: $Montserrat;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--purple-white);
+      text-align: center;
+      line-height: 25px;
+    }
+    #trends-changer {
+      font-family: $Montserrat;
+      font-size: 16px;
+      color: var(--purple-white);
+      text-align: center;
+      line-height: 25px;
+    }
     img {
       width: 40%;
     }

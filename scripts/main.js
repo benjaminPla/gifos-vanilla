@@ -2,13 +2,11 @@ import { events } from "./events.js";
 import { sections } from "./sections.js";
 import { setCamera } from "./camera.js";
 
-console.log(location);
-console.log(location.pathname);
-if (location.pathname === "/camera.html") {
-  setCamera();
-} else {
+if (location.href.endsWith("/index.html")) {
   sections.setSearch();
   sections.setTrendings();
+} else {
+  setCamera();
 }
 sections.setNav();
 

@@ -11,7 +11,6 @@ const sections = {
       globals.clearNode("section-main");
       globals.fillNode("section-main", dom.search);
       events.search.searchOnEnter();
-      events.search.suggestions();
     });
     document
       .getElementById("icon-hamb")
@@ -36,6 +35,7 @@ const sections = {
     globals.fillNode("section-main", dom.search);
     events.search.searchIcon();
     events.search.searchOnEnter();
+    events.trendsChanger();
   },
   setTrendings: () => {
     sessionStorage.setItem("trends-offset", 0);
@@ -67,8 +67,6 @@ const chainsSections = {
       .getItem("myGifs")
       .split(",")
       .forEach((gif) => {
-        // hacer fetch por id
-        console.log(gif);
         gifs.createMyGifsGif(gif);
       });
   },

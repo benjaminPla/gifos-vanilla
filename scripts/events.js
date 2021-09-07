@@ -4,6 +4,15 @@ import { gifs } from "./gifs.js";
 import { dom } from "./dom.js";
 
 const events = {
+  trendsChanger: async () => {
+    let trends = await fetch(endpoints.trends()).then((res) => res.json());
+    trends.data.forEach((gif) => {
+      document.getElementById(
+        "trends-changer"
+      ).innerHTML += `<a class="a-trends hover">${gif.title}, </a>`;
+    });
+    chainsEvents.trendsChangerEvent();
+  },
   nav: {
     toggleHambMenu: () => {
       document
@@ -39,7 +48,7 @@ const events = {
       const inputSearch = document.getElementById("input-search");
       inputSearch.addEventListener("keypress", (key) => {
         if (key.key === "Enter") {
-          const searchOffset = sessionStorage.getItem("search-offset") || '';
+          const searchOffset = sessionStorage.getItem("search-offset") || "";
           let offset = 0;
           if (searchOffset.split(",")[0] == inputSearch.value) {
             offset = Number(searchOffset.split(",")[1]) + 12;
@@ -89,6 +98,18 @@ const events = {
 };
 
 const chainsEvents = {
+  trendsChangerEvent: () => {
+    document.querySelectorAll(".a-trends").forEach((gif) => {
+      gif.addEventListener("click", (e) => {
+        const inputSearch = document.getElementById("input-search");
+        globals.clearNode("search-grid");
+        globals.clearNode("suggestions-container");
+        gifs.createSearchGif(e.target.textContent);
+        document.getElementById("search-title").textContent = inputSearch.value;
+        chainsEvents.search.viewMoreBtn();
+      });
+    });
+  },
   search: {
     inputSearchClear: () => {
       document
@@ -119,7 +140,7 @@ const chainsEvents = {
       btn.textContent = "VIEW MORE";
       btn.addEventListener("click", () => {
         const inputSearch = document.getElementById("input-search");
-        const searchOffset = sessionStorage.getItem("search-offset") || '';
+        const searchOffset = sessionStorage.getItem("search-offset") || "";
         let offset = 0;
         if (searchOffset.split(",")[0] == inputSearch.value) {
           offset = Number(searchOffset.split(",")[1]) + 12;

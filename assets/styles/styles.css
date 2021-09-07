@@ -373,6 +373,21 @@ body {
   #section-main #div-search h1 span {
     color: #50e3c2;
   }
+  #section-main #div-search h2 {
+    font-family: "Montserrat", "sans-serif";
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--purple-white);
+    text-align: center;
+    line-height: 25px;
+  }
+  #section-main #div-search #trends-changer {
+    font-family: "Montserrat", "sans-serif";
+    font-size: 16px;
+    color: var(--purple-white);
+    text-align: center;
+    line-height: 25px;
+  }
   #section-main #div-search img {
     width: 40%;
   }
@@ -893,4 +908,3 @@ body {
   height: 100vh;
   z-index: 300;
 }
-/*# sourceMappingURL=styles.css.map */

@@ -32,7 +32,11 @@ const dom = {
     </div>
     <h2 id="search-title"></h2>
     <div id="search-grid"></div>
-    <button id="search-view-more" class="hover"></button>
+    <div id="changer">
+    <h2 id="h2-changer">Trending:</h2>
+    <p id="trends-changer"></p>
+      <button id="search-view-more" class="hover"></button>
+    </div>
   </div>`,
   inputSearchIconSearch: `<img id="icon-search" src="./assets/imgs/icon-search.svg" alt="icon-search">`,
   inputSearchIconClear: `<img id="icon-search-clear" class="hover" src="./assets/imgs/icon-close.svg" alt="icon-close">`,
