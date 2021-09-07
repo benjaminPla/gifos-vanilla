@@ -2,7 +2,7 @@ import { events } from "./events.js";
 import { sections } from "./sections.js";
 import { setCamera } from "./camera.js";
 
-if (location.href.endsWith("/index.html")) {
+if (@location.href.endsWith("/camera.html")) {
   sections.setSearch();
   sections.setTrendings();
 } else {
